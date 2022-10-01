@@ -1,12 +1,7 @@
-import { useState } from "react"
 import "./App.css"
-import { PhaseFour } from "./components/PhaseFour"
-import { PhaseOne } from "./components/PhaseOne"
-import { PhaseThree } from "./components/PhaseThree"
-import { PhaseTwo } from "./components/PhaseTwo"
+import { Phases } from "./components/Phases"
 
 const App = () => {
-	const [curPhase, setCurPhase] = useState(1)
 	return (
 		<div className=' h-screen flex flex-col justify-center items-center'>
 			<div className='flex items-center'>
@@ -29,14 +24,7 @@ const App = () => {
 					)
 				})}
 			</div>
-			{
-				{
-					1: <PhaseOne />,
-					2: <PhaseTwo />,
-					3: <PhaseThree />,
-					4: <PhaseFour />,
-				}[curPhase]
-			}
+			<Phases />
 		</div>
 	)
 }
