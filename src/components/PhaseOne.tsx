@@ -10,9 +10,7 @@ export const PhaseOne = () => {
 	}
 	return (
 		<div>
-			<h1>Welcome! First things first...</h1>
-			<p>You can always change them later.</p>
-			<form onSubmit={handleSubmit}>
+			<form id='my-form' onSubmit={handleSubmit}>
 				<div>
 					<p className='text-sm font-light'>Full Name</p>
 					<input
@@ -27,7 +25,6 @@ export const PhaseOne = () => {
 						onChange={(e) => setDisplayName(e.target.value)}
 					/>
 				</div>
-				<button type='submit'>Create Workspace</button>
 			</form>
 		</div>
 	)
