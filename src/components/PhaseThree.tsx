@@ -1,6 +1,7 @@
 import { useState } from "react"
+import { CurPhaseProps } from "../interface"
 
-export const PhaseThree = () => {
+export const PhaseThree = ({ setCurPhase }: CurPhaseProps) => {
 	const [isTeam, setIsTeam] = useState(false)
 	return (
 		<div className='flex mt-10 items-center flex-col w-[400px] space-y-5'>
@@ -54,6 +55,7 @@ export const PhaseThree = () => {
 				</div>
 			</div>
 			<button
+				onClick={() => setCurPhase(4)}
 				className='bg-[#664DE5] rounded-md border font-light text-white focus:none block flex-1 min-w-0 w-full text-sm border-gray-100 p-3'
 				form='my-form'
 				type='submit'

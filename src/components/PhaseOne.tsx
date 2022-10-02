@@ -1,12 +1,14 @@
 import { SyntheticEvent, useState } from "react"
+import { CurPhaseProps } from "../interface"
 
-export const PhaseOne = () => {
+export const PhaseOne = ({ setCurPhase }: CurPhaseProps) => {
 	const [name, setName] = useState("")
 	const [displayName, setDisplayName] = useState("")
 	const handleSubmit = (e: SyntheticEvent) => {
 		e.preventDefault()
 		const obj = { name: name, displayName: displayName }
 		console.log(obj)
+		setCurPhase(2)
 	}
 	return (
 		<form

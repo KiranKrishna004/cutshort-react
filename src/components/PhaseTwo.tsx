@@ -1,12 +1,17 @@
 import { SyntheticEvent, useState } from "react"
+import { CurPhaseProps } from "../interface"
 
-export const PhaseTwo = () => {
+export const PhaseTwo = ({ setCurPhase }: CurPhaseProps) => {
 	const [workspaceName, setWorkspaceName] = useState("")
 	const [url, setUrl] = useState("")
 	const handleSubmit = (e: SyntheticEvent) => {
 		e.preventDefault()
-		const obj = { workspaceName: workspaceName, workspaceUrl: url }
+		const obj = {
+			workspaceName: workspaceName,
+			workspaceUrl: "www.eden.com/" + url,
+		}
 		console.log(obj)
+		setCurPhase(3)
 	}
 	return (
 		<form
