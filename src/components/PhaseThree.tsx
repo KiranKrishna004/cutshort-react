@@ -4,11 +4,11 @@ import { CurPhaseProps } from "../interface"
 export const PhaseThree = ({ setCurPhase }: CurPhaseProps) => {
 	const [isTeam, setIsTeam] = useState(false)
 	return (
-		<div className='flex mt-10 items-center flex-col w-[400px] space-y-5'>
+		<div className='flex mt-10 items-center flex-col xs:w-[300px] sm:w-[400px] xs:space-y-3 sm:space-y-5'>
 			<div className='flex'>
 				<div
 					onClick={() => setIsTeam(false)}
-					className='flex-1 flex flex-col border rounded-lg py-7 px-5'
+					className='flex-1 flex flex-col border rounded-lg xs:py-4 xs:px-3 sm:py-7 sm:px-5'
 					style={!isTeam ? { borderColor: "#664DE5" } : {}}
 				>
 					<svg
@@ -28,11 +28,11 @@ export const PhaseThree = ({ setCurPhase }: CurPhaseProps) => {
 						Write better. Think more clearly. Stay organized.
 					</p>
 				</div>
-				<div className='mx-4'></div>
+				<div className='xs:mx-2 sm:mx-4'></div>
 				<div
 					onClick={() => setIsTeam(true)}
 					style={isTeam ? { borderColor: "#664DE5" } : {}}
-					className='flex-1 flex flex-col border py-7 px-5 rounded-lg'
+					className='flex-1 flex flex-col border xs:py-4 xs:px-3 sm:py-7 sm:px-5 rounded-lg'
 				>
 					<svg
 						xmlns='http://www.w3.org/2000/svg'

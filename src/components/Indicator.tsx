@@ -19,15 +19,15 @@ export const Indicator = ({ curPhase }: { curPhase: number }) => {
 								<div
 									className={
 										index + 1 <= curPhase
-											? "bg-[#664DE5] h-[0.1px] w-7 self-center"
-											: "bg-gray-300 h-[0.1px] w-7 self-center"
+											? "bg-[#664DE5] h-[0.1px] xs:w-5 sm:w-7 self-center"
+											: "bg-gray-300 h-[0.1px] xs:w-5 sm:w-7 self-center"
 									}
 								></div>
 								<div
 									className={
 										index + 1 < curPhase
-											? "bg-[#664DE5] h-[0.1px] w-7 self-center"
-											: "bg-gray-300 h-[0.1px] w-7 self-center"
+											? "bg-[#664DE5] h-[0.1px] xs:w-5 sm:w-7 self-center"
+											: "bg-gray-300 h-[0.1px] xs:w-5 sm:w-7 self-center"
 									}
 								></div>
 							</>

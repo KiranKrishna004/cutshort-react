@@ -16,7 +16,7 @@ export const PhaseTwo = ({ setCurPhase }: CurPhaseProps) => {
 		<form
 			onSubmit={handleSubmit}
 			id='my-form'
-			className='space-y-5 mt-14 w-[400px]'
+			className='xs:space-y-3 sm:space-y-5 mt-14 xs:w-[300px] sm:w-[400px]'
 		>
 			<div>
 				<p className='text-sm mb-1'>Workspace Name</p>
@@ -43,14 +43,14 @@ export const PhaseTwo = ({ setCurPhase }: CurPhaseProps) => {
 						placeholder='Example'
 					/>
 				</div>
-				<button
-					className=' mt-5 bg-[#664DE5] rounded-md border font-light text-white focus:none block flex-1 min-w-0 w-full text-sm border-gray-100 p-3.5'
-					form='my-form'
-					type='submit'
-				>
-					Create Workspace
-				</button>
 			</div>
+			<button
+				className='bg-[#664DE5] rounded-md border font-light text-white focus:none block flex-1 min-w-0 w-full text-sm border-gray-100 p-3.5'
+				form='my-form'
+				type='submit'
+			>
+				Create Workspace
+			</button>
 		</form>
 	)
 }
