@@ -1,30 +1,52 @@
 import "./App.css"
 import { Phases } from "./components/Phases"
-
+import edenLogo from "./assets/edenLogo.png"
+import { useState } from "react"
 const App = () => {
+	const [curPhase, setCurPhase] = useState(1)
 	return (
 		<div className=' h-screen flex flex-col justify-center items-center'>
-			<div className='flex items-center'>
-				<img
-					className='h-10'
-					src='https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1024&h=1280&q=80'
-					alt='logo missing'
-				/>
-				<h1>Eden</h1>
+			<div className='flex items-end space-x-2'>
+				<img className='h-10' src={edenLogo} alt='logo missing' />
+				<p className='text-3xl font-semibold'>Eden</p>
 			</div>
-			<div className='flex space-x-10'>
+			<div className='flex'>
 				{[...Array(4)].map((item, index) => {
 					return (
-						<p
-							key={index + 1}
-							className='border border-black px-4 py-2 rounded-full'
-						>
-							{index + 1}
-						</p>
+						<>
+							<p
+								key={index + 1}
+								className={
+									index + 1 <= curPhase
+										? "bg-[#664DE5] my-20 text-white text-sm px-4 py-2.5 rounded-full"
+										: "border text-black my-20 text-sm px-4 py-2.5 rounded-full"
+								}
+							>
+								{index + 1}
+							</p>
+							{index + 1 !== 4 && (
+								<>
+									<div
+										className={
+											index + 1 <= curPhase
+												? "bg-[#664DE5] h-[0.1px] w-7 self-center"
+												: "bg-gray-300 h-[0.1px] w-7 self-center"
+										}
+									></div>
+									<div
+										className={
+											index + 1 < curPhase
+												? "bg-[#664DE5] h-[0.1px] w-7 self-center"
+												: "bg-gray-300 h-[0.1px] w-7 self-center"
+										}
+									></div>
+								</>
+							)}
+						</>
 					)
 				})}
 			</div>
-			<Phases />
+			<Phases curPhase={curPhase} setCurPhase={setCurPhase} />
 		</div>
 	)
 }
