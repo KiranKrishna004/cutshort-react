@@ -10,7 +10,6 @@ export const PhaseTwo = ({ setCurPhase }: CurPhaseProps) => {
 			workspaceName: workspaceName,
 			workspaceUrl: "www.eden.com/" + url,
 		}
-		console.log(obj)
 		setCurPhase(3)
 	}
 	return (
@@ -22,7 +21,7 @@ export const PhaseTwo = ({ setCurPhase }: CurPhaseProps) => {
 			<div>
 				<p className='text-sm mb-1'>Workspace Name</p>
 				<input
-					className='rounded-md border font-light focus:none block flex-1 min-w-0 w-full text-sm border-gray-100 p-3'
+					className='rounded-md border font-light focus:none block flex-1 min-w-0 w-full text-sm border-gray-100 p-3.5'
 					placeholder='Eden'
 					onChange={(e) => setWorkspaceName(e.target.value)}
 				/>
@@ -40,12 +39,12 @@ export const PhaseTwo = ({ setCurPhase }: CurPhaseProps) => {
 						onChange={(e) => setUrl(e.target.value)}
 						type='text'
 						id='website-admin'
-						className='rounded-none rounded-r-md border font-light focus:none block flex-1 min-w-0 w-full text-sm border-gray-100 p-3'
+						className='rounded-none rounded-r-md border font-light focus:none block flex-1 min-w-0 w-full text-sm border-gray-100 p-3.5'
 						placeholder='Example'
 					/>
 				</div>
 				<button
-					className=' mt-5 bg-[#664DE5] rounded-md border font-light text-white focus:none block flex-1 min-w-0 w-full text-sm border-gray-100 p-3'
+					className=' mt-5 bg-[#664DE5] rounded-md border font-light text-white focus:none block flex-1 min-w-0 w-full text-sm border-gray-100 p-3.5'
 					form='my-form'
 					type='submit'
 				>

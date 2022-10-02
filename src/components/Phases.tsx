@@ -1,9 +1,11 @@
+import { useState } from "react"
 import { CurPhaseProps } from "../interface"
 import { PhaseOne } from "./PhaseOne"
 import { PhaseThree } from "./PhaseThree"
 import { PhaseTwo } from "./PhaseTwo"
 
 export const Phases = ({ curPhase, setCurPhase }: CurPhaseProps) => {
+	const [displayName, setDisplayName] = useState("")
 	const phaseContent = [
 		{
 			headerText: "Welcome! First things first...",
@@ -18,7 +20,9 @@ export const Phases = ({ curPhase, setCurPhase }: CurPhaseProps) => {
 			subText: "We'll streamline your setup experience accordingly.",
 		},
 		{
-			headerText: "Congratulations, Eren!",
+			headerText: `Congratulations, ${
+				displayName === "" ? "Eren" : displayName
+			}!`,
 			subText: "You have completed onboarding, you can start using Eden!.",
 		},
 	]
@@ -31,7 +35,7 @@ export const Phases = ({ curPhase, setCurPhase }: CurPhaseProps) => {
 						xmlns='http://www.w3.org/2000/svg'
 						viewBox='0 0 24 24'
 						fill='#664DE5'
-						className='w-20 h-20 mb-10 mt-20'
+						className='w-20 h-20 mb-10 mt-5'
 					>
 						<path
 							fillRule='evenodd'
@@ -48,12 +52,18 @@ export const Phases = ({ curPhase, setCurPhase }: CurPhaseProps) => {
 				</p>
 				{
 					{
-						1: <PhaseOne setCurPhase={setCurPhase} />,
+						1: (
+							<PhaseOne
+								setCurPhase={setCurPhase}
+								setDisplayName={setDisplayName}
+								displayName={displayName}
+							/>
+						),
 						2: <PhaseTwo setCurPhase={setCurPhase} />,
 						3: <PhaseThree setCurPhase={setCurPhase} />,
 						4: (
 							<button
-								className='mt-14 w-[400px] bg-[#664DE5] rounded-md border font-light text-white focus:none block flex-1 min-w-0 w-full text-sm border-gray-100 p-3'
+								className='mt-8 w-[400px] bg-[#664DE5] rounded-md border font-light text-white focus:none block flex-1 min-w-0 w-full text-sm border-gray-100 p-3.5'
 								form='my-form'
 								type='submit'
 							>

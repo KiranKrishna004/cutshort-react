@@ -1,13 +1,19 @@
 import { SyntheticEvent, useState } from "react"
 import { CurPhaseProps } from "../interface"
 
-export const PhaseOne = ({ setCurPhase }: CurPhaseProps) => {
+export const PhaseOne = ({
+	setCurPhase,
+	setDisplayName,
+	displayName,
+}: {
+	setCurPhase: React.Dispatch<React.SetStateAction<number>>
+	setDisplayName: React.Dispatch<React.SetStateAction<string>>
+	displayName: string
+}) => {
 	const [name, setName] = useState("")
-	const [displayName, setDisplayName] = useState("")
 	const handleSubmit = (e: SyntheticEvent) => {
 		e.preventDefault()
 		const obj = { name: name, displayName: displayName }
-		console.log(obj)
 		setCurPhase(2)
 	}
 	return (
@@ -33,7 +39,7 @@ export const PhaseOne = ({ setCurPhase }: CurPhaseProps) => {
 				/>
 			</div>
 			<button
-				className='bg-[#664DE5] rounded-md border font-light text-white focus:none block flex-1 min-w-0 w-full text-sm border-gray-100 p-3'
+				className='bg-[#664DE5] rounded-md border font-light text-white focus:none block flex-1 min-w-0 w-full text-sm border-gray-100 p-3.5'
 				form='my-form'
 				type='submit'
 			>
