@@ -56,7 +56,7 @@ export const PhaseThree = ({ setCurPhase }: CurPhaseProps) => {
 			</div>
 			<button
 				onClick={() => setCurPhase(4)}
-				className='bg-[#664DE5] rounded-md border font-light text-white focus:none block flex-1 min-w-0 w-full text-sm border-gray-100 p-3'
+				className='bg-[#664DE5] rounded-md border font-light text-white focus:none block flex-1 min-w-0 w-full text-sm border-gray-100 p-3.5'
 				form='my-form'
 				type='submit'
 			>
