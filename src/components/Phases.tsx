@@ -35,7 +35,7 @@ export const Phases = ({ curPhase, setCurPhase }: CurPhaseProps) => {
 						xmlns='http://www.w3.org/2000/svg'
 						viewBox='0 0 24 24'
 						fill='#664DE5'
-						className='w-20 h-20 mb-10 mt-5'
+						className='w-20 h-20 mb-10 xs:mt-0 sm:mt-5'
 					>
 						<path
 							fillRule='evenodd'
@@ -44,10 +44,10 @@ export const Phases = ({ curPhase, setCurPhase }: CurPhaseProps) => {
 						/>
 					</svg>
 				)}
-				<p className='text-3xl font-bold '>
+				<p className='xs:text-xl sm:text-3xl font-bold '>
 					{phaseContent[curPhase - 1].headerText}
 				</p>
-				<p className='mt-3 text-gray-500'>
+				<p className='xs:text-sm sm:text-base mt-3 text-gray-500 xs:max-w-xs sm:max-w-full'>
 					{phaseContent[curPhase - 1].subText}
 				</p>
 				{
@@ -63,7 +63,7 @@ export const Phases = ({ curPhase, setCurPhase }: CurPhaseProps) => {
 						3: <PhaseThree setCurPhase={setCurPhase} />,
 						4: (
 							<button
-								className='mt-8 w-[400px] bg-[#664DE5] rounded-md border font-light text-white focus:none block flex-1 min-w-0 w-full text-sm border-gray-100 p-3.5'
+								className='mt-8 xs:w-[300px] sm:w-[400px] bg-[#664DE5] rounded-md border font-light text-white focus:none block flex-1 min-w-0 w-full text-sm border-gray-100 p-3.5'
 								form='my-form'
 								type='submit'
 							>

@@ -1,5 +1,4 @@
 import { SyntheticEvent, useState } from "react"
-import { CurPhaseProps } from "../interface"
 
 export const PhaseOne = ({
 	setCurPhase,
@@ -18,7 +17,7 @@ export const PhaseOne = ({
 	}
 	return (
 		<form
-			className='space-y-5 mt-14 w-[400px]'
+			className='xs:space-y-3 sm:space-y-5 mt-14 xs:w-[300px] sm:w-[400px]'
 			id='my-form'
 			onSubmit={handleSubmit}
 		>
