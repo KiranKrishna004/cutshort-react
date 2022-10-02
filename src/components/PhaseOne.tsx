@@ -9,23 +9,34 @@ export const PhaseOne = () => {
 		console.log(obj)
 	}
 	return (
-		<div>
-			<form id='my-form' onSubmit={handleSubmit}>
-				<div>
-					<p className='text-sm font-light'>Full Name</p>
-					<input
-						placeholder='Steve Jobs'
-						onChange={(e) => setName(e.target.value)}
-					/>
-				</div>
-				<div>
-					<p className='text-sm font-light'>Display Name</p>
-					<input
-						placeholder='Steve'
-						onChange={(e) => setDisplayName(e.target.value)}
-					/>
-				</div>
-			</form>
-		</div>
+		<form
+			className='space-y-5 mt-14 w-[400px]'
+			id='my-form'
+			onSubmit={handleSubmit}
+		>
+			<div>
+				<p className='text-sm mb-1'>Full Name</p>
+				<input
+					className='rounded-md border font-light focus:none block flex-1 min-w-0 w-full text-sm border-gray-100 p-3'
+					placeholder='Steve Jobs'
+					onChange={(e) => setName(e.target.value)}
+				/>
+			</div>
+			<div>
+				<p className='text-sm mb-1'>Display Name</p>
+				<input
+					className='rounded-md border font-light focus:none block flex-1 min-w-0 w-full text-sm border-gray-100 p-3'
+					placeholder='Steve'
+					onChange={(e) => setDisplayName(e.target.value)}
+				/>
+			</div>
+			<button
+				className='bg-[#664DE5] rounded-md border font-light text-white focus:none block flex-1 min-w-0 w-full text-sm border-gray-100 p-3'
+				form='my-form'
+				type='submit'
+			>
+				Create Workspace
+			</button>
+		</form>
 	)
 }
